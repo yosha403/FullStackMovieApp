@@ -1,0 +1,25 @@
+
+<h2>Update {{movie.title}}</h2>
+
+<p>Title</p>
+<input type ="text" id="Title{{Id}}" value="{{movie.title}}" />
+<br>
+
+<p>Genre</p>
+
+<select name="genre" id="Genre{{Id}}" value="{{movie.genre.toLowerCase()}}">
+    <option value="" selected></option>
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+    <option value="horror">Horror</option>
+    <option value="animated">Animated</option>
+    <option value="war">War</option>
+</select>
+<br>
+<p>Year</p>
+<input type="number" min="1880" max="2030" id="Year{{Id}}" value="{{movie.year}}"/>
+<br>
+<p>Run Time(in minutes)</p>
+<input type="number" min="0" id="RunTime{{Id}}" value="{{movie.runTime}}" />
+
+<button (click)="UpdateMovie()">Update {{movie.title}}</button>

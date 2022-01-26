@@ -1,0 +1,17 @@
+<div style="border: 1px solid black;" *ngFor="let m of movies; let i = index">
+   <div id="display{{m.id}}">
+    <p>Title: {{m.title}}</p>
+    <p>Genre: {{m.genre}}</p>
+    <p>Year: {{m.year}}</p>
+    <p>Run Time: {{m.runTime}}</p>
+    <p>Id: {{m.id}}</p>
+    <button (click)="DeleteEntry(m.id, i)">Delete {{m.title}}</button>
+    </div>
+    <app-update-movie id="edit{{m.id}}" style="display: none;" [Id]=m.id></app-update-movie>
+    <button (click)="EditMovie(m.id)">Edit {{m.title}}</button>
+</div>
+
+<!--This creates a reference to another component, our create movie component
+in angular you are allowed to reuse and reference as many components as you want at once
+-->
+<app-create-movie></app-create-movie>
